@@ -12,7 +12,7 @@ class UserController extends Controller
     public function index()
     {
         $usersQuery = User::query()
-        ->select('id', 'name', 'email', 'phone', 'created_at') // Include necessary columns
+        ->select('id', 'name', 'email', 'phone','position','created_at') // Include necessary columns
         ->when(request('name'), function ($query, $name) {
             // Search by name if name parameter exists in the request
             $query->where('name', 'like', '%' . $name . '%');
@@ -38,6 +38,8 @@ class UserController extends Controller
             'phone' => 'required',
             'role' => 'required',
             'password' => 'required|min:8',
+            'position' => 'required',
+            'departement' => 'required',
         ]);
 
         $user = User::create([
@@ -46,6 +48,8 @@ class UserController extends Controller
             'phone' => $validatedData['phone'],
             'role' => $validatedData['role'],
             'password' => Hash::make($validatedData['password']),
+            'position' => $validatedData['position'],
+            'departement' => $validatedData['departement'],
         ]);
 
         return redirect()->route('users.index')->with('success', 'User created successfully.');
@@ -64,6 +68,9 @@ class UserController extends Controller
             'email' => 'required|email|unique:users,email,' . $user->id,
             'phone' => 'required',
             'role' => 'required',
+            'position' => 'required',
+            'departement' => 'required',
+
         ]);
 
         $user->update($validatedData);
