@@ -87,18 +87,18 @@
                                 is-invalid
                             @enderror" name="position" value="{{ $user->position }}">
                             @error('position')
-                            <div class=" invalid-feedback">
+                            <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Departement</label>
-                            <input type="text" class="form-control @error('departement')
+                            <label>Department</label>
+                            <input type="text" class="form-control @error('department')
                                 is-invalid
                             @enderror" name="departement" value="{{ $user->departement }}">
                             @error('departement')
-                            <div class=" invalid-feedback">
+                            <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                             @enderror
@@ -126,7 +126,6 @@
                                 </label>
                             </div>
                         </div>
-
                     </div>
                     <div class="card-footer text-right">
                         <button class="btn btn-primary">Submit</button>
