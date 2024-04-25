@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\http\Controllers\UserController;
 use App\http\Controllers\CompanyController;
+use App\http\Controllers\AttendanceController;
 
 Route::get('/', function () {
     return view('pages.auth.auth-login');
@@ -15,4 +16,6 @@ Route::middleware(['auth'])->group(function () {
 
 
     Route::resource('companies', CompanyController::class);
+
+    Route::resource('attendances', AttendanceController::class);
 });
