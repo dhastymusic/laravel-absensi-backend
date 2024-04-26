@@ -21,3 +21,9 @@ Route::post('/checkin', 'App\Http\Controllers\Api\AttendanceController@checkIn')
 Route::post('/checkout', 'App\Http\Controllers\Api\AttendanceController@checkOut')->middleware('auth:sanctum');
 Route::get('/ischeckin', 'App\Http\Controllers\Api\AttendanceController@isCheckIn')->middleware('auth:sanctum');
 Route::post('/updateprofile', 'App\Http\Controllers\Api\AuthController@updateProfile')->middleware('auth:sanctum');
+
+//post permission
+Route::apiResource('/permission', 'App\Http\Controllers\Api\PermissionController')->middleware('auth:sanctum');
+
+//post note
+Route::apiResource('/note', 'App\Http\Controllers\Api\NoteController')->middleware('auth:sanctum');

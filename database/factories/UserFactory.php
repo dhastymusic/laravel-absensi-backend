@@ -29,6 +29,8 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             'phone' => $this->faker->phoneNumber(), // Include definition for the 'phone' column
             'role' => 'user', // Include definition for the 'role' column
+            'position' => $this->faker->randomElement(['staff', 'supervisor']),
+            'departement' => $this->faker->word(), // Include definition for the 'departement' column
         ];
     }
 
