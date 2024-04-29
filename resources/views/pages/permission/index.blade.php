@@ -99,15 +99,6 @@
                                                     <i class="fas fa-edit"></i>
                                                     Detail
                                                 </a>
-
-                                                <form action="{{ route('permissions.destroy', $permission->id) }}"
-                                                    method="POST" class="ml-2">
-                                                    <input type="hidden" name="_method" value="DELETE" />
-                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                                                    <button class="btn btn-sm btn-danger btn-icon confirm-delete">
-                                                        <i class="fas fa-times"></i> Delete
-                                                    </button>
-                                                </form>
                                             </div>
                                         </td>
                                     </tr>

@@ -86,20 +86,12 @@
 
                                         <td>
                                             <div class="d-flex justify-content-center">
-                                                <a href="{{ route('attendances.edit', $attendance->id) }}"
+                                                <a href="{{ route('attendances.show', $attendance->id) }}"
                                                     class="btn btn-sm btn-info btn-icon">
                                                     <i class="fas fa-edit"></i>
-                                                    Edit
+                                                    Details
                                                 </a>
 
-                                                <form action="{{ route('attendances.destroy', $attendance->id) }}"
-                                                    method="POST" class="ml-2">
-                                                    <input type="hidden" name="_method" value="DELETE" />
-                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                                                    <button class="btn btn-sm btn-danger btn-icon confirm-delete">
-                                                        <i class="fas fa-times"></i> Delete
-                                                    </button>
-                                                </form>
                                             </div>
                                         </td>
                                     </tr>

@@ -28,7 +28,7 @@ class UserFactory extends Factory
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
             'phone' => $this->faker->phoneNumber(), // Include definition for the 'phone' column
-            'role' => 'user', // Include definition for the 'role' column
+            'role' => $this->faker->randomElement(['staff', 'supervisor']),
             'position' => $this->faker->randomElement(['staff', 'supervisor']),
             'departement' => $this->faker->word(), // Include definition for the 'departement' column
         ];
